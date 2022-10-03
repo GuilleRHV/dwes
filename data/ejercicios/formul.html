@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario credenciales</h1>
+    <form name="miformu" action="autoriza.php" method="get">
+        <p>
+            <label for="nombre">introduce nombre</label>
+            <input type="text" name="nombreusu" id="nombreusu">
+
+        </p>
+        <p>
+            <label for="password">introduce contraseña</label>
+            <input type="password" name="passwd" id="passwd">
+        </p>
+        <p>
+            <p>Elige tu modulo favorito</p>
+            <label for="password">Introduce contraseña</label>
+            <label for="asignatura1"> PHP </label>
+            <input type="checkbox" name="asignaturas[]" id="asignatura1" value="PHP">
+            <label for="asignatura2"> SQL </label>
+            <input type="checkbox" name="asignaturas[]" id="asignatura2" value="SQL">
+            <label for="asignatura3"> JAVA </label>
+            <input type="checkbox" name="asignaturas[]" id="asignatura3" value="JAVA">
+        </p>
+        <input type="submit" name="envio" id="envio" value="Enviar">
+    </form>
+   
+</body>
+</html>
