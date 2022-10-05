@@ -23,3 +23,14 @@ echo "<br>Llamada a la suma 2 vez es : " . suma(3,4);
 echo "<br>Llamada a la suma 3 vez es : " . suma(3,4);
 
 
+function restar($op1, $op2){
+    $op1 = $op1 -$op2;
+    return $op1;
+}
+$var3 = 8;
+$var4 = 3;
+
+echo "<br>LLamada por valor " . restar($var3,$var4);
+
+//Para borrar una variable
+//unset($var1);
