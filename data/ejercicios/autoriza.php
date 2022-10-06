@@ -46,13 +46,27 @@ if(isset($_GET["envio"])){
 
     if(isset($_GET["envio"])){
         $menupreferidos = $_GET["menusm"];
-        if(!empty($menupreferido)){
+        if(!empty($menupreferidos)){
             foreach($menupreferidos as $menu)
             echo "<br>tu plato preferido es " . $menu;
         }else{
             echo "<br>No has elegido ningun menu";
         }
+        echo "<br>Print_R";
+        print_r($menupreferidos);
     }
+
+
+    if(isset($_GET["envio"])){
+        $ip = $_GET["ip"];
+        if(!empty($ip)){
+            echo "<br>La ip es " . $ip;
+        }else{
+            echo "<br>No has elegido ningun ip";
+        }
+    }
+
+    
 
     
     ?>

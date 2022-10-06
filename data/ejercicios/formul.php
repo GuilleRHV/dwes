@@ -43,13 +43,15 @@
             </p>
             <p>Varias opciones</p>
             <p>
-            <select name="menusm[]" id="menus" multiple=2>
+            <select name="menusm[]" id="menus" multiple=2 required>
                 <option value="codillo">Codillo asado</option>
                 <option value="ensaladad">Ensalada cesar</option>
                 <option value="pizza">Pizza</option>
                 <option value="macarrones">Macarrones</option>
             </select>
             </p>
+
+            <input type="hidden" name="ip" value="<?=$_SERVER['SERVER_ADDR']?>">
         <input type="submit" name="envio" id="envio" value="Enviar">
     </form>
    
