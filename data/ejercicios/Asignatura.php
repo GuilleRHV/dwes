@@ -37,7 +37,7 @@ NOTACION:
 class Asignatura{
     private $nombre=null;
     private $numcreditos=null;
-
+    private static $ciclo = null;
 
     public function __construct($nombre,$numcreditos)
     {
@@ -57,6 +57,15 @@ class Asignatura{
 
     function getNumeroCreditos(){
         return $this->numcreditos;
+    }
+
+    static function getCiclo(){
+        //para acceder a estaticos
+        return self::$ciclo;
+       
+    }
+    static function setCiclo($nomciclo){
+        self::$ciclo = $nomciclo;
     }
 
     function setNumeroCreditos($numcreditos){
