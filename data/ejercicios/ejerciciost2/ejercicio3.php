@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Formulario credenciales</h1>
-    <form name="miformu" action="archivosjs/ejercicio3.php" method="GET">
+    <form name="miformu" method="GET">
         <p>
             <label for="nombre">introduce titulo</label>
             <input type="text" name="nombrepersona" id="nombrepersona">
@@ -17,26 +17,24 @@
         
         <input type="submit" name="envio" id="envio" value="Enviar">
         </form>
-        <?php
+    
+    <?php
 
         $nombre=$_GET['nombrepersona'];
         
     
-    if(isset($_GET['nombrepersona']) && !empty($_GET['nombrepersona']) && strlen($_GET['nombrepersona'])>3 && isset($_GET["envio"])){
+    if(isset($_GET["envio"])){
         
-        echo "<br>Hola" . $nombre . " , el nombre existe";
+       if(strlen($_GET['nombrepersona'])>3){
+           echo "Bienvenido ".$nombre;
        
-    }else{
+        }else{
         
         echo "Debe tener 3 letras";
         
     }
-    
-    
-    
-    
-    
-    
-        ?>
+}
+    ?>
+
 </body>
 </html>
