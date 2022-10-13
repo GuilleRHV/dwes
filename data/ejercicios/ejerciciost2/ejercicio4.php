@@ -32,6 +32,14 @@
         $op2 = $_GET['op2'];
         $operador=$_GET['operador'];
         $resultado;
+
+    if($op1==null || $op2==null){
+       /* echo $_SERVER['HTTP_REFERER'];
+        header("Location: ".$_SERVER['HTTP_REFERER']);
+        die();*/
+    }else {
+
+    
     if(isset($_GET["envio"])){
        if($operador=="+"){
             $resultado=$op1+$op2;
@@ -44,6 +52,7 @@
        }
        echo "El resultado es " . $resultado;
 }
+    }
     ?>
 
 </body>

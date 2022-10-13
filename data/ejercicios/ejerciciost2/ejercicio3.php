@@ -15,7 +15,7 @@
 
         </p>
         
-        <input type="submit" name="envio" id="envio" value="Enviar">
+        <input type="submit" name="envio" id="envio" value="Enviar" minlength="3">
         </form>
     
     <?php
