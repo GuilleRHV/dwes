@@ -10,6 +10,10 @@
 <h1>Ejercicio 6</h1>
 <h2>Equipo basket</h2>
 <?php
+    //Se puede hacer array de varias formas:
+        /*$arraya=array("valor1","valor2");
+          $arrayb=["valor1","valor2"];
+        */
     $equipoa = array("Jorge","Jose","Antonio","David","Sergio");
     $equipob =["Jorge","Jose","Antonio","David","Sergio"];
     echo "<h3>a) Indicando sólo los nombres (foreach)</h3>";
