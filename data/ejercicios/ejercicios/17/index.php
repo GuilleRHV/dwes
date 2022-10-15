@@ -10,18 +10,15 @@
     
     <h1>Ejercicio 17</h1>
     <h2>App</h2>
-    <form name="miformu" method="GET">
-       
-    </form>
+    
 
 <?php
-    function index(){
-        echo "<h3>Fibonacci</h3>";
-        echo '<a href="17fibonacci.php">Fibonacci</a><br>';
-        echo '<a href="17potencias2.php">Potencias 2</a><br>';
-    }
-    index();
+require_once "17App.php";
+$app = new App;
+$app->index();
+
 ?>
+         
 </body>
 </html>
 
