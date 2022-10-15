@@ -10,6 +10,7 @@
 <h1>Ejercicio 8</h1>
 <h2>Equipo basket insertando uno a uno</h2>
 <?php
+    //$array[]="valor" para insertar en ultimo lugar
     $equipo[] = "Jorge";
     $equipo[] = "Jose";
     $equipo[] = "Antonio";
