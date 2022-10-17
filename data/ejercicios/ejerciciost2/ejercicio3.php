@@ -15,7 +15,7 @@
 
         </p>
         
-        <input type="submit" name="envio" id="envio" value="Enviar" minlength="3">
+        <input type="submit" name="envio" id="envio" value="Enviar" minlength=3>
         </form>
     
     <?php
@@ -29,7 +29,7 @@
            echo "Bienvenido ".$nombre;
        
         }else{
-        
+    
         echo "Debe tener 3 letras";
         
     }

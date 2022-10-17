@@ -26,7 +26,7 @@
     if(isset($_GET['nombrepersonas'])){
         foreach($_GET['nombrepersonas'] as $persona){
             //Se puede poner type="hidden" para no "olvidarlo"
-            echo '<li><input type="text" name="nombrepersonas[]" value="'.$persona.'"></li>';
+            echo '<li><input type="hidden" name="nombrepersonas[]" value="'.$persona.'"></li>';
         }
     }
 

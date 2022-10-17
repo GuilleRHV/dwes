@@ -39,7 +39,7 @@ if(!$fp2){
     echo "No existe el archivo";
 }else{
     //PHP_EOL == \n (salto de linea)
-$cadena = "Esto es otra linea" . PHP_EOL;
-fwrite($fp2,$cadena) ;
+$textoainsertar = "Esto es otra linea" . PHP_EOL;
+fwrite($fp2,$textoainsertar) ;
 }
 fclose($fp2);
