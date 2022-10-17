@@ -10,6 +10,7 @@
 
 <body>
     <h1>Ejercicio 11</h1>
+    <p>Crea un formulario para enviar los datos de registro de un libro: título, autor, editorial, páginas. </p>
     <h2>Formulario libro</h2>
     <form name="miformu" method="GET">
         <p>
@@ -36,7 +37,7 @@
     </form>
 
     <?php
-
+    //Usamos $_GET para obtener el valor del "name" del input
     $autor = $_GET['nombreautor'];
     $editorial = $_GET['nombreeditorial'];
     $paginaslibro =  $_GET['numeropaginas'];

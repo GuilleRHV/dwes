@@ -10,6 +10,7 @@
 <body>
 
     <h1>Ejercicio 4</h1>
+    <p>Imprimir los primeros 10 números de la sucesión de fibonacci. La sucesión comienza con los números 0 y 1; 2​ a partir de estos, «cada término es la suma de los dos anteriores» </p>
     <h2>Fibonacci (10 primeros numeros)</h2>
     <?php
     define('LONG', 10);

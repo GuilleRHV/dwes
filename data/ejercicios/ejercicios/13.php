@@ -10,6 +10,10 @@
 
 <body>
     <h1>Ejercicio 13</h1>
+    <p>Envío del script al mismo script. Crea un formulario para enviar campo nombre. 
+        El nombre debe existir y debe tener un tamaño mínimo de 3 caracteres. Si es válido se da un saludo. 
+    <br>Si no lo es se vuelve a mostar el formulario indicando que el campo es obligatorio y mostrando 
+        en el "input" el valor anterior no válido.</p>
     <h2>Formulario nombre valido</h2>
     <form name="miformu" method="GET">
         <p>
@@ -33,7 +37,7 @@
 
     if (isset($_GET["envio"])) {
         //strlen mide la longitud del String
-        if (strlen($_GET['nombrepersona']) > 3) {
+        if (strlen($_GET['nombrepersona']) >= 3) {
             echo "Bienvenido " . $nombre;
         } else {
             echo "Debe tener 3 letras";

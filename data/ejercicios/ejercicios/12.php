@@ -11,10 +11,12 @@
 <body>
 
     <h1>Ejercicio 12</h1>
+    <p> Crea un formulario para enviar campo nombre. Si el nombre existe se da un saludo.
+        Si no existe se vuelve atrás indicando que el campo es obligatorio. </p>
     <h2>Formulario nombre</h2>
     <form name="miformu" method="GET">
         <p>
-            <label for="nombre">introduce titulo</label>
+            <label for="nombre">introduce nombre</label>
             <input type="text" name="nombrepersona" id="nombrepersona">
 
         </p>
@@ -30,7 +32,7 @@
         if (!empty($_GET['nombrepersona'])) {
             echo "<br>Hola " . $nombre . " , el nombre existe";
         } else {
-            echo '<br>El nombre no existe';
+            echo '<br>El campo nombre es obligatorio';
         }
     }
     ?>

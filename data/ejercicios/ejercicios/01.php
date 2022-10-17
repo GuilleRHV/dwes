@@ -20,6 +20,11 @@
 
     ?>
     <h1>Ejercicio 1</h1>
+    <p> Imprimir una ficha con tus datos personales guardados en variables (nombre, apellidos, edad, teléfono, email, ...). Hazlo usando una tabla html y cambiando de modo:
+
+    <br>Con print y con echo
+    <br>Con concatenando, usando dobles comillas y simples, ....
+    </p>
     <!--Con print-->
     <h2>Con print</h2>
     <table>
@@ -60,6 +65,7 @@
     </table>
     <!--Concatenar ()-->
     <?php
+    //Se usa el . (punto) para concatenar
     $apellidoconcatenado = "Rodriguez ";
     $apellidoconcatenado .= "Huguet";
     ?>

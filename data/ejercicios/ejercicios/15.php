@@ -10,6 +10,7 @@
 
 <body>
     <h1>Ejercicio 15 </h1>
+    <p>Crea un formulario que envíe un array de 3 nombres. Para hacerlo debes usar el mismo nombre en todos los input (name="nombres[]"). </p>
     <h2>Array nombres</h2>
     <form name="miformu" method="GET">
         <p>
@@ -32,7 +33,7 @@
     </form>
 
     <?php
-
+    //Para introducir el valor de un input en un array añadimos al final del name "[]";
 
     if (isset($_GET["envio"])) {
         $array = $_GET["nombres"];

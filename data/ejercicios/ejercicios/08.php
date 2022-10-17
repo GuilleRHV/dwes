@@ -10,6 +10,7 @@
 <body>
 
     <h1>Ejercicio 8</h1>
+    <p>Repitite el ejercicio 6 añadiendo los elementos al array de uno en uno. </p>
     <h2>Equipo basket insertando uno a uno</h2>
     <?php
     //$array[]="valor" para insertar en ultimo lugar

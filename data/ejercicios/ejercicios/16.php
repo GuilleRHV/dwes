@@ -11,6 +11,7 @@
 <body>
 
     <h1>Ejercicio 16</h1>
+    <p>Crea una lista usando etiquetas ul y li. La lista inicialmente estará vacía pero un formulario con un input servirá para añadir los elementos. Usa input de tipo hidden para que no "olvidar" </p>
     <h2>Añadir a una lista</h2>
     <form name="miformu" method="GET">
         <p>
@@ -24,7 +25,7 @@
             <?php
             //Si en form quisieramos pagina externa añadimos action="archivosphp/ejercicio2.php"
 
-
+            //Vamos añadiendo los nombres uno a uno y a la vez se recorre el array nombrepersonas (y a la vez mostrandose por pantalla)
             if (isset($_GET['nombrepersonas'])) {
                 foreach ($_GET['nombrepersonas'] as $persona) {
                     //Se puede poner type="hidden" para no "olvidarlo"

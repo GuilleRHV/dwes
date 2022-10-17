@@ -10,6 +10,9 @@
 <body>
 
     <h1>Ejercicio 6</h1>
+    <p>Construír un array con el quinteto inicial de un equipo de basket. Construyelo usando "array()" y usando "[]". Imprimir dicho quinteto usando etiquetas "ul" y "li". Imprimelo de dos modos distintos:
+    <br>a) Indicando sólo los nombres. 
+    <br>b) Indicando la posición del nombre en el array (0, 1, 2, ...). </p>
     <h2>Equipo basket</h2>
     <?php
     //Se puede hacer array de varias formas:

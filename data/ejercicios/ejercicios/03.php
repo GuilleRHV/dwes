@@ -10,6 +10,7 @@
 <body>
 
     <h1>Ejercicio 3</h1>
+    <p> Imprimir los números divisibles por 3 desde el 1 hasta el 10 </p>
     <h2>Divisibles por 3 (1-10)</h2>
     <?php
     define('LONG', 10);

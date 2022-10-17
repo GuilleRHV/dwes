@@ -10,6 +10,7 @@
 <body>
 
     <h1>Ejercicio 9</h1>
+    <p>Repitite el ejercicio 7 añadiendo los elementos al array de uno en uno. </p>
     <h2>Paises insertando uno a uno</h2>
     <?php
     $paises[] = "España";

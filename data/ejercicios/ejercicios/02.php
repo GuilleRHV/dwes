@@ -10,17 +10,18 @@
 <body>
 
     <h1>Ejercicio 2</h1>
+    <p>Imprimir la tabla de multiplicar del 8. Usar constante para que fácilmente podamos adaptarla a otros números. </p>
     <h2>Tabla del 8</h2>
     <?php
     define('LONG', 10);
     // o const LONG = 10;
     echo "<table border=1>";
 
-    const NUM = 8;
+    $ocho= 8;
     echo "<tr>";
     for ($fila = 1; $fila <= LONG; $fila++) {
 
-        $num = NUM * $fila;
+        $num = $ocho * $fila;
         echo "<td>", $num, "</td>";
     }
 

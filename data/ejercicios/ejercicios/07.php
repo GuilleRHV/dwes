@@ -10,6 +10,7 @@
 <body>
 
     <h1>Ejercicio 7</h1>
+    <p>Construye un array con el nombre de 4 países y muestralo por pantalla. </p>
     <h2>Paises</h2>
     <?php
     $paises = array("España", "Alemania", "Italia", "Francia");
