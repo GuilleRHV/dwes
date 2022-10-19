@@ -6,19 +6,49 @@
 
 //Definir una cookie
 //setcookie(nombre, valor, expiracion);
-$miarray=["hola",25,[2,4,6]];
+$miarray = ["hola", 25, [2, 4, 6]];
+$arr=['a'=>'hola','b'=>25,'c'=>[2, 4, 6]];
 //Poner el array en una cadena
 $infoguardar = serialize($miarray);
-setcookie("primeracookie", "aceptado", time() + 60); //una semana
+//Ahora json
+echo "<h1>Info en json</h1>";
+echo "<h3>Codificar json</h3>";
+$infojson = json_encode($miarray);
+$infojsonasocativo = json_encode($arr);
+echo $infojson . "<br>";
+echo $infojsonasocativo;
+echo "<br><h3>Descodificar json</h3><br>";
+$descodificarjson = json_decode($infojsonasocativo);
+echo $descodificarjson;
+
+/*
+setcookie("primeracookie", $infojson, time() + 60); //una semana
 setcookie("segundacookie", $infoguardar, time() + 600);
 
 echo "<h1>Mi primera cookie</h1>";
 
-//Borrar cookie
+//BORRAR COOKIE
 //setcookie("primeracookie","aceptado",time()-120);
+
+
 //echo "<h1>Mi primera eliminada</h1>";
-echo "<br>Valor de la cookie: " . $_COOKIE["primeracookie"];
+//CADUCAR COOKIE
+//unset() caduca la cookie, no la borra
+
+echo "<br>Valor de la cookie1: " . $_COOKIE["primeracookie"];
+
 echo "<pre>";
-var_dump(unserialize($_COOKIE["segundacookie"]));
-echo "</pre>";
+echo "<br>Valor de la cookie2:";
+var_dump($infojson);
+//var_dump(unserialize($_COOKIE["segundacookie"]));
+
 echo "<br>Numero de cookies creadas: " . count($_COOKIE);
+
+/*FORMATO JSON
+clave:valor
+
+json_encode(objeto)
+json_decode(objeto)
+
+
+*/
