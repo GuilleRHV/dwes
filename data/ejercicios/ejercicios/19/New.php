@@ -1,19 +1,28 @@
 <?php
 
-
+$nombre =$_COOKIE["usuario"];
+require "App.php";
 
 if (isset($_POST["nuevo"])) {
+    $listadeseos=$_COOKIE[$nombre];
+    $listadeseos=json_decode($listadeseos);
+    //json_decode($listadeseos);
     
-    setcookie("listadeseos", $_COOKIE["datospersonales"], time() - 1);
     
-$listadeseos=$_COOKIE["listadeseos"];
-$listadeseos[]=$_POST["deseos"];
+    $listadeseos[] = $_POST["deseo"];
 
-setcookie("listadeseos", $listadeseos, time() - 1);
-    
+    $listadeseos=json_encode($listadeseos);
+   
 
+    setcookie($nombre, $listadeseos, time() + 200);
+    $app = new App;
+    $app->new();
 }
-header("Location: Home.php")
+
+if(isset($_POST["cancelar"])){
+    header("Location: Home.php");
+}
+
 ?>
 
 
@@ -29,9 +38,10 @@ header("Location: Home.php")
 <body>
     <form name="miformu" method="POST">
         <p>
-        <?php
+        <?php 
+        $nombre = $_COOKIE["usuario"];
+        echo "Bienvenido usuario " . $_COOKIE["usuario"] . ", tus deseos son " . $_COOKIE[$nombre];
 
-echo "Usuario:" . $_COOKIE["nombre"] . "tus deseos son ". var_dump($_COOKIE["listadeseos"]);
         ?>
         </p>
         <p>
@@ -42,6 +52,7 @@ echo "Usuario:" . $_COOKIE["nombre"] . "tus deseos son ". var_dump($_COOKIE["lis
         </p>
         
         <input type="submit" name="nuevo" value="Añadir deseo">
+        <input type="submit" name="cancelar" value="Cancelar">
 
        
     </form>

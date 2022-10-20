@@ -6,13 +6,14 @@ class App
 
     function run()
     {
-        require_once "formulario.php";
+        //Si da problemas poner este y quitar el del login
+        //require_once "formulario.php";
     }
 
 
     function login()
     {
-
+        require_once "formulario.php";
         //require_once "formulario.html";
         if (isset($_POST["envio"])) {
             
@@ -32,4 +33,6 @@ class App
     function new(){
         header("Location: New.php");
     }
+
+ 
 }
