@@ -25,7 +25,7 @@ class App
         //Las cookies deben ser lo primero en hacer
 
         $nombre = $_POST["usuario"];
-        setcookie("nombre", $nombre, time() +200);
+        setcookie("usuario", $nombre, time() +200);
         header("Location: Home.php");
     }
 

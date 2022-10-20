@@ -73,3 +73,10 @@ echo"<br>Persona dni: " . $persona["dni"];
 echo"<h2>Arrays multidimensionales (MATRICES)</h2>";
 $arrm = [ 0=>[3,5,6],1=>[4,8,6,5]  ];
 echo "<br>Debe salir 5 : " . $arrm[1][3];
+
+echo "<h2>Prueba</h2>";
+$array9 = [3];
+$array9[]=4;
+foreach($array9 as $ar){
+    echo $ar . "<br>";
+}
