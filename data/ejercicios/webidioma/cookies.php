@@ -2,14 +2,15 @@
 
 
 if (isset($_POST["envio"])) {
-    $pais = $_POST['operador'];
+    $pais = $_POST['selectoridiomas'];
     //Las cookies deben ser lo primero en hacer
     
-    setcookie("lengua", $pais, time() + 600);
     
-    $deportes[]=$_POST['deportes'];
-    $jsondeportes = json_encode($deportes);
-    setcookie("deportes", $jsondeportes, time() + 600);
+    
+    $coches=$_POST['coches'];
+    $jsoncoches = json_encode($coches);
+    setcookie("idioma",$pais, time() + 600);
+   setcookie("coches", $jsoncoches, time() + 600);
     
     
 }

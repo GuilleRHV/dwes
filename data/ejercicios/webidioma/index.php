@@ -15,17 +15,20 @@
         <p>
 
             <?php
-                if($_COOKIE["lengua"]=="espanya"){
+                if($_COOKIE["idioma"]=="espanya"){
                     echo "¡Bienvenido de vuelta!";
                 }
-                if($_COOKIE["lengua"]=="ingles"){
+                if($_COOKIE["idioma"]=="ingles"){
                     echo "Welcome back!";
                 }
-                if($_COOKIE["lengua"]=="aleman"){
+                if($_COOKIE["idioma"]=="aleman"){
                     echo "Willkommen zuruk";
                 }
-                echo "<h3>Tus deportes favoritos son</h3>";
-                echo $_COOKIE["deportes"] . "<br>";
+
+                if($_COOKIE["coches"]!=null){
+                echo "<h3>Tus coches favoritos son</h3>";
+                
+                echo $_COOKIE["coches"] . "<br>";}
             ?>
 
             <select name="selectoridiomas">
@@ -39,11 +42,11 @@
         </p>
         <p>Selecciona deportes</p>
         <p>
-            <select name="deportes[]" multiple=4>
-                <option value="futbol">futbol</option>
-                <option value="basket">basket</option>
-                <option value="tenis">tenis</option>
-                <option value="rugby">rugby</option>
+            <select name="coches[]" multiple=4>
+                <option value="audi">audi</option>
+                <option value="bmw">bmw</option>
+                <option value="opel">opel</option>
+                <option value="ford">ford</option>
             </select>
         </p>
 
