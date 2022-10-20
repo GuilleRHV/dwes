@@ -37,7 +37,7 @@
     </form>
 
     <?php
-    //Usamos $_GET para obtener el valor del "name" del input
+    //Usamos $_GET[] para obtener el valor del "name" del input
     $autor = $_GET['nombreautor'];
     $editorial = $_GET['nombreeditorial'];
     $paginaslibro =  $_GET['numeropaginas'];
