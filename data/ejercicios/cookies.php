@@ -5,6 +5,10 @@
 //Otro ejemplo strtotime(("+1 minute"))
 
 //Definir una cookie
+
+setcookie("primeracookie", "prueba", time() + 60); //una semana
+setcookie("segundacookie", $archivojson, time() + 600);
+echo $_COOKIE["primeracookie"];
 //setcookie(nombre, valor, expiracion);
 $miarray = ["hola", 25, [2, 4, 6]];
 $arr=['a'=>'hola','b'=>25,'c'=>[2, 4, 6]];
@@ -19,12 +23,11 @@ echo $infojson . "<br>";
 echo $infojsonasocativo;
 echo "<br><h3>Descodificar json</h3><br>";
 $descodificarjson = json_decode($infojsonasocativo);
-echo $descodificarjson;
+//echo $descodificarjson;
+
+
 
 /*
-setcookie("primeracookie", $infojson, time() + 60); //una semana
-setcookie("segundacookie", $infoguardar, time() + 600);
-
 echo "<h1>Mi primera cookie</h1>";
 
 //BORRAR COOKIE

@@ -1,8 +1,9 @@
 <?php
 require_once "App.php";
 $app = new App;
-if ($_COOKIE["nombre"] != null) {
-    header("Location: Home.php");
+
+if(isset($_POST["envio"])){
+    setcookie("nombre",$_POST["usuario"],time() + 200);
 }
 $app->login();
 ?>
@@ -24,8 +25,7 @@ $app->login();
             <label for="nombre">Inicia sesion</label>
             <p>Usuario</p>
             <input type="text" name="usuario">
-            <p>Contraseña</p>
-            <input type="password" name="password">
+            
 
         </p>
 
