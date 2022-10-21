@@ -12,8 +12,8 @@ if (isset($_POST["crearlista"])) {
         $listadeseos = array($_POST["deseo"]);
         $listadeseos = json_encode($listadeseos);
     } else {
-
-        //$listadeseos = json_decode($listadeseos);
+        $listadeseos = $_COOKIE[$nombre];
+        $listadeseos = json_decode($listadeseos);
         //json_decode($listadeseos);
 
 
@@ -39,23 +39,31 @@ if (isset($_POST["eliminartodo"])) {
     $nombre = $_COOKIE["usuario"];
     if ($listadeseos != null) {
         setcookie($nombre, $listadeseos, time() - 1);
-        
+        //Creamos cookie solo con el nombre y para que podamos seguir poniendo deseos (y no de problemas)
+        setcookie($nombre, "", time() - 400);
+        header("Location: Home.php");
     } else {
         $nombre = $_COOKIE["usuario"];
         setcookie($nombre, $listadeseos, time() - 1);
-        
+        //Creamos cookie solo con el nombre y para que podamos seguir poniendo deseos (y no de problemas)
+        setcookie($nombre, "", time() - 400);
+        header("Location: Home.php");
     }
 }
 
 
 if (isset($_POST["cerrarsesion"])) {
     if ($listadeseos != null) {
+        //Cerramos la cookie nombre y la lista deseos
+        setcookie("usuario", "", time() - 1);
         setcookie($nombre, $listadeseos, time() - 1);
-        header("Location: index.php");
+        header("Location: .");
     } else {
         $nombre = $_COOKIE["usuario"];
+        //Cerramos la cookie nombre y la lista deseos
+        setcookie("usuario", "", time() - 1);
         setcookie($nombre, $listadeseos, time() - 1);
-        header("Location: index.php");
+        header("Location: .");
     }
 }
 
