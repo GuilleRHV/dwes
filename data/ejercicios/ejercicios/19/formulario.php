@@ -18,8 +18,8 @@ $app->login();
 </head>
 
 <body>
-    <h1>Ejercicio 18</h1>
-    <h2>App</h2>
+    <h1>Ejercicio 19</h1>
+    <h2>App lista deseos</h2>
     <form name="miformu" method="POST" action="index.php">
         <p>
             <label for="nombre">Inicia sesion</label>

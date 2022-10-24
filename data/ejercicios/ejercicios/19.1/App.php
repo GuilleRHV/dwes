@@ -2,13 +2,13 @@
 
 class App
 {
-    
+
 
     function run()
     {
         //Si da problemas poner este y quitar el del login
         //require_once "formulario.php";
-        
+
     }
 
 
@@ -17,7 +17,7 @@ class App
         require_once "formulario.php";
         //require_once "formulario.html";
         if (isset($_POST["envio"])) {
-            
+
             $this->auth();
         }
     }
@@ -27,63 +27,79 @@ class App
         //Las cookies deben ser lo primero en hacer
 
         $nombre = $_POST["usuario"];
-        setcookie("usuario", $nombre, time() +200);
+        setcookie("usuario", $nombre, time() + 200);
         header("Location: Home.php");
     }
 
-    function new(){
+    function new()
+    {
         header("Location: New.php");
     }
 
-    function empty(){
+    function empty()
+    {
         $nombre = $_COOKIE["usuario"];
-    $listadeseos=$_COOKIE[$nombre];
-        if (isset($_POST["eliminartodo"])) {
-            
-            if ($listadeseos != null) {
-                setcookie($nombre, $listadeseos, time() - 1);
-                //Creamos cookie solo con el nombre y para que podamos seguir poniendo deseos (y no de problemas)
-                setcookie($nombre, "", time() - 400);
-                header("Location: Home.php");
-            } else {
-                $nombre = $_COOKIE["usuario"];
-                setcookie($nombre, $listadeseos, time() - 1);
-                //Creamos cookie solo con el nombre y para que podamos seguir poniendo deseos (y no de problemas)
-                setcookie($nombre, "", time() - 400);
-                header("Location: Home.php");
-            }
-        }
-        header("Location: Home.php");
+        $listadeseos = $_COOKIE[$nombre];
 
-        
+
+        if ($listadeseos != null) {
+            //unset para eliminar
+            setcookie($nombre, $listadeseos, time() - 400);
+            //Creamos cookie solo con el nombre y para que podamos seguir poniendo deseos (y no de problemas)
+            setcookie($nombre, "", time() - 400);
+            header("Location: Home.php");
+        } else {
+            $nombre = $_COOKIE["usuario"];
+            setcookie($nombre, $listadeseos, time() - 400);
+            //Creamos cookie solo con el nombre y para que podamos seguir poniendo deseos (y no de problemas)
+            setcookie($nombre, "", time() - 400);
+            header("Location: Home.php");
+        }
+
+        header("Location: Home.php");
     }
 
-    function close(){
+    function close()
+    {
         $nombre = $_COOKIE["usuario"];
-        $listadeseos=$_COOKIE[$nombre];
+        $listadeseos = $_COOKIE[$nombre];
         if ($listadeseos != null) {
             //Cerramos la cookie nombre y la lista deseos
-            setcookie("usuario", "", time() - 1);
-            setcookie($nombre, $listadeseos, time() - 1);
-            header("Location: .");
+            setcookie("usuario", "", time() - 400);
+
+            setcookie($nombre, "", time() - 400);
+            header("Location: index.php");
         } else {
             $nombre = $_COOKIE["usuario"];
             //Cerramos la cookie nombre y la lista deseos
-            setcookie("usuario", "", time() - 1);
-            setcookie($nombre, $listadeseos, time() - 1);
-            header("Location: Home.php");
+            setcookie("usuario", "", time() - 400);
+            setcookie($nombre, "", time() - 400);
+            header("Location: index.php");
         }
     }
 
-    function quitar(){
+    function quitar()
+    {   
+        
         $nombre = $_COOKIE["usuario"];
-        $listadeseos=$_COOKIE[$nombre];
+        $listadeseos = $_COOKIE[$nombre];
         $listadeseos = json_decode($listadeseos);
         unset($listadeseos[$_POST["ideliminar"]]);
-         $listadeseos = json_encode($listadeseos);
+        $listadeseos = json_encode($listadeseos);
 
-    setcookie($nombre, $listadeseos, time() + 400);
+        setcookie($nombre, $listadeseos, time() + 400);
     }
 
- 
+    function delete()
+    {
+        $nombre = $_COOKIE["usuario"];
+        $listadeseos = $_COOKIE[$nombre];
+        if(isset($_POST["eliminarid"])){
+        $listadeseos = json_decode($listadeseos);
+        $listadeseos[$_POST["ideliminar"]]=null;
+        $listadeseos = json_encode($listadeseos);
+
+        setcookie($nombre, $listadeseos, time() + 400);
+        }
+    }
 }
