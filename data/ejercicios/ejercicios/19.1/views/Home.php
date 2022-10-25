@@ -24,5 +24,6 @@
     <input type="text" name="new">
     <input type="submit" value="nuevo">
   </form>
+  
 </body>
 </html>
