@@ -1,10 +1,6 @@
 <?php
 require_once "App.php";
 $app = new App;
-
-if(isset($_POST["envio"])){
-    setcookie("nombre",$_POST["usuario"],time() + 200);
-}
 $app->login();
 ?>
 <!DOCTYPE html>
@@ -23,9 +19,9 @@ $app->login();
     <form name="miformu" method="POST" action="index.php">
         <p>
             <label for="nombre">Inicia sesion</label>
-            <p>Usuario</p>
-            <input type="text" name="usuario">
-            
+        <p>Usuario</p>
+        <input type="text" name="usuario">
+
 
         </p>
 

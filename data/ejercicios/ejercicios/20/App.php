@@ -32,11 +32,12 @@ class App
         header("Location: Home.php");
     }
 
+    //Crea nuevo deseo
     function new()
     {
         header("Location: New.php");
     }
-
+    //Vacia lista de deseos
     function empty()
     {
         $nombre = $_SESSION["usuario"];
@@ -54,7 +55,7 @@ class App
         
         }
     }
-    //No se borra
+    //Destruye la sesion y la borra 
     function close()
     {
         session_start();
@@ -68,7 +69,7 @@ class App
     }
 
 
-
+    //Elimina una posicion del array lista de deseos
     function delete()
     {
         $nombre = $_SESSION["usuario"];
@@ -77,7 +78,7 @@ class App
             $posicion = $_POST["ideliminar"];
             $listadeseos = json_decode($listadeseos);
             unset($listadeseos[$posicion]);
-            // $listadeseos[$posicion]=null;
+            //El espacio sobrante lo ordena
             $listadeseos = array_values($listadeseos);
             $listadeseos = json_encode($listadeseos);
             $_SESSION[$nombre] = $listadeseos;

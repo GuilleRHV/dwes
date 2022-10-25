@@ -3,6 +3,7 @@
 require_once "App.php";
 
 session_start();
+//Crearemos la lista de deseos
 if (isset($_POST["crearlista"])) {
     //$listadeseos=$_POST["deseo"];
     $nombre = $_SESSION["usuario"];
@@ -23,8 +24,8 @@ if (isset($_POST["crearlista"])) {
 
 
         $listadeseos = array($_POST["deseo"]);
-
-        //$listadeseos = json_encode($listadeseos);
+       // $_SESSION[$nombre][]=$_POST["deseo"];
+        
 
 
     }
@@ -35,22 +36,18 @@ if (isset($_POST["crearlista"])) {
     $app->new();
 }
 
-if (isset($_POST["quitar"])) {
-    $app = new App;
-    $app->delete();
-}
-
+//Llama a la funcion empty
 if (isset($_POST["eliminartodo"])) {
     $app = new App;
     $app->empty();
 }
 
-
+//Llama a la dunciont close 
 if (isset($_POST["cerrarsesion"])) {
     $app = new App;
     $app->close();
 }
-
+//Llama a la funcion delete
 if (isset($_POST["eliminarid"])) {
     $app = new App;
     $app->delete();
