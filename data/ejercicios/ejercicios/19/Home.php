@@ -27,18 +27,21 @@ if (isset($_POST["crearlista"])) {
     $app->new();
 }
 
-if (isset($_POST["quitar"])) {
-    
-    $app->quitar();
-}
+
 
 if (isset($_POST["eliminartodo"])) {
+    $app =new App;
     $app->empty();
 }
 
 
 if (isset($_POST["cerrarsesion"])) {
+    $app =new App;
     $app->close();
+}
+if (isset($_POST["eliminarid"])) {
+    $app = new App;
+    $app->delete();
 }
 
 // 

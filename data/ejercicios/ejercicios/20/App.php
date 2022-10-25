@@ -54,12 +54,12 @@ class App
         
         }
     }
-
+    //No se borra
     function close()
     {
         session_start();
         //Cerramos la cookie nombre y la lista deseos
-        $_SESSION[$_SESSION["usuario"]] = json_decode(array());
+        $_SESSION=array();
         //elimina informacion
         session_destroy();
         //Borra cookie
