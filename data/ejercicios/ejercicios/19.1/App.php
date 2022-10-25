@@ -78,28 +78,23 @@ class App
         }
     }
 
-    function quitar()
-    {   
-        
-        $nombre = $_COOKIE["usuario"];
-        $listadeseos = $_COOKIE[$nombre];
-        $listadeseos = json_decode($listadeseos);
-        unset($listadeseos[$_POST["ideliminar"]]);
-        $listadeseos = json_encode($listadeseos);
-
-        setcookie($nombre, $listadeseos, time() + 400);
-    }
 
     function delete()
     {
         $nombre = $_COOKIE["usuario"];
         $listadeseos = $_COOKIE[$nombre];
-        if(isset($_POST["eliminarid"])){
-        $listadeseos = json_decode($listadeseos);
-        $listadeseos[$_POST["ideliminar"]]=null;
-        $listadeseos = json_encode($listadeseos);
-
-        setcookie($nombre, $listadeseos, time() + 400);
+        if (isset($_POST["eliminarid"])) {
+            $posicion = $_POST["ideliminar"];
+            $listadeseos = json_decode($listadeseos);
+            unset($listadeseos[$posicion]);
+           // $listadeseos[$posicion]=null;
+            $listadeseos = array_values($listadeseos);
+            $listadeseos = json_encode($listadeseos);
+            
+            setcookie($nombre, $listadeseos, time() + 600);
+           
+            header("Location: Home.php");
         }
+        
     }
 }

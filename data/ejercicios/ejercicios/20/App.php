@@ -2,7 +2,7 @@
 
 class App
 {
-
+    
 
     function run()
     {
@@ -41,49 +41,30 @@ class App
     {
         $nombre = $_SESSION["usuario"];
         $listadeseos = $_SESSION[$nombre];
-
-
-        if ($listadeseos != null) {
-            $_SESSION['usuario'] = array();
+        if (isset($_SESSION[$nombre])) {
+            
+            $_SESSION[$nombre] = "";
             //elimina informacion
-            session_destroy();
+            
             //Borra cookie
-            setcookie($_SESSION[$nombre], '', time() - 7200);
+            
+    
+
             header("Location: Home.php");
-        } else {
-            $_SESSION['usuario'] = array();
-            //elimina informacion
-            session_destroy();
-            //Borra cookie
-            setcookie($_SESSION[$nombre], '', time() - 7200);
-            header("Location: Home.php");
+        
         }
-
-        header("Location: Home.php");
     }
 
     function close()
     {
-        $nombre = $_SESSION["usuario"];
-        $listadeseos = $_SESSION[$nombre];
-        if ($listadeseos != null) {
-            //Cerramos la cookie nombre y la lista deseos
-            $_SESSION = array();
-            //elimina informacion
-            session_destroy();
-            //Borra cookie
-            setcookie(session_name(), '', time() - 7200);
-            header("Location: index.php");
-        } else {
-            $nombre = $_SESSION["usuario"];
-            //Cerramos la cookie nombre y la lista deseos
-            $_SESSION = array();
-            //elimina informacion
-            session_destroy();
-            //Borra cookie
-            setcookie(session_name(), '', time() - 7200);
-            header("Location: index.php");
-        }
+        session_start();
+        //Cerramos la cookie nombre y la lista deseos
+        $_SESSION[$_SESSION["usuario"]] = json_decode(array());
+        //elimina informacion
+        session_destroy();
+        //Borra cookie
+        setcookie(session_name(),"", time() - 1);
+        header("Location: index.php");
     }
 
 
@@ -93,11 +74,14 @@ class App
         $nombre = $_SESSION["usuario"];
         $listadeseos = $_SESSION[$nombre];
         if (isset($_POST["eliminarid"])) {
+            $posicion = $_POST["ideliminar"];
             $listadeseos = json_decode($listadeseos);
-            $listadeseos[$_POST["ideliminar"]] = null;
+            unset($listadeseos[$posicion]);
+            // $listadeseos[$posicion]=null;
+            $listadeseos = array_values($listadeseos);
             $listadeseos = json_encode($listadeseos);
-
-            setcookie($nombre, $listadeseos, time() + 400);
+            $_SESSION[$nombre] = $listadeseos;
+            header("Location: Home.php");
         }
     }
 }

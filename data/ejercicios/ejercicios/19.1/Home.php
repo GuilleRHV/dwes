@@ -27,10 +27,7 @@ if (isset($_POST["crearlista"])) {
     $app->new();
 }
 
-if (isset($_POST["quitar"])) {
-    $app=new App;
-    $app->delete();
-}
+
 
 if (isset($_POST["eliminartodo"])) {
     $app =new App;
@@ -41,6 +38,10 @@ if (isset($_POST["eliminartodo"])) {
 if (isset($_POST["cerrarsesion"])) {
     $app =new App;
     $app->close();
+}
+if (isset($_POST["eliminarid"])) {
+    $app = new App;
+    $app->delete();
 }
 
 // 

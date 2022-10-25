@@ -10,12 +10,14 @@ if (isset($_POST["crearlista"])) {
 
     if (isset($_SESSION[$nombre])) {
         $listadeseos = $_SESSION[$nombre];
+
         $listadeseos = json_decode($listadeseos);
         //json_decode($listadeseos);
-
-        foreach ($_SESSION[$nombre] as $key => $val) {
-            $listadeseos[] = $val;
-        }
+        
+            foreach ($_SESSION[$nombre] as $key => $val) {
+                $listadeseos[] = $val;
+            }
+        
         $listadeseos[] = $_POST["deseo"];
     } else {
 
@@ -49,6 +51,11 @@ if (isset($_POST["cerrarsesion"])) {
     $app->close();
 }
 
+if (isset($_POST["eliminarid"])) {
+    $app = new App;
+    $app->delete();
+}
+
 // 
 
 ?>
@@ -68,7 +75,7 @@ if (isset($_POST["cerrarsesion"])) {
         <?php
         $nombre = $_SESSION["usuario"];
         $lista = null;
-        
+
         echo "Bienvenido usuario " . $_SESSION["usuario"] . ", tus deseos son " . $_SESSION[$nombre];
 
         ?>
