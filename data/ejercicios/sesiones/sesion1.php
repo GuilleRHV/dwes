@@ -3,6 +3,8 @@
 //Crear o unirse a una sesion ya creada
 session_start();
 
+
+/*$nombresesion=session_name*/ 
 //$_SESSION["nombreVariable]
 //contador visitas
 
