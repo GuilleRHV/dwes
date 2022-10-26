@@ -30,7 +30,7 @@ if (isset($_POST["envio"])) {
     <h1>Login sesiones</h1>
     <h2>App</h2>
     <!--Usamos htmlspecialchars por cuestiones de seguridad -->
-    <form name="miformu" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
+    <form name="miformu" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
 
         <label for="nombre">Inicia sesion</label>
         <p>Usuario</p>
@@ -43,8 +43,8 @@ if (isset($_POST["envio"])) {
 
         <input type="submit" name="envio" value="Añadir">
 
-       
-        
+
+
     </form>
 
 </body>

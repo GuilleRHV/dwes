@@ -14,18 +14,18 @@ if (isset($_POST["crearlista"])) {
 
         $listadeseos = json_decode($listadeseos);
         //json_decode($listadeseos);
-        
-            foreach ($_SESSION[$nombre] as $key => $val) {
-                $listadeseos[] = $val;
-            }
-        
+
+        foreach ($_SESSION[$nombre] as $key => $val) {
+            $listadeseos[] = $val;
+        }
+
         $listadeseos[] = $_POST["deseo"];
     } else {
 
 
         $listadeseos = array($_POST["deseo"]);
-       // $_SESSION[$nombre][]=$_POST["deseo"];
-        
+        // $_SESSION[$nombre][]=$_POST["deseo"];
+
 
 
     }

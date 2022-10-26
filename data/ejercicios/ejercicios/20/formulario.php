@@ -20,9 +20,9 @@ $app->login();
     <form name="miformu" method="POST" action="index.php">
         <p>
             <label for="nombre">Inicia sesion</label>
-            <p>Usuario</p>
-            <input type="text" name="usuario">
-            
+        <p>Usuario</p>
+        <input type="text" name="usuario">
+
 
         </p>
 

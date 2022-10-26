@@ -2,7 +2,7 @@
 
 class App
 {
-    
+
 
     function run()
     {
@@ -43,16 +43,15 @@ class App
         $nombre = $_SESSION["usuario"];
         $listadeseos = $_SESSION[$nombre];
         if (isset($_SESSION[$nombre])) {
-            
+
             $_SESSION[$nombre] = "";
             //elimina informacion
-            
+
             //Borra cookie
-            
-    
-            
+
+
+
             header("Location: Home.php");
-        
         }
     }
     //Destruye la sesion y la borra 
@@ -60,11 +59,11 @@ class App
     {
         session_start();
         //Cerramos la cookie nombre y la lista deseos
-        $_SESSION=array();
+        $_SESSION = array();
         //elimina informacion
         session_destroy();
         //Borra cookie
-        setcookie(session_name(),"", time() - 1,"/");
+        setcookie(session_name(), "", time() - 1, "/");
         header("Location: index.php");
     }
 
@@ -74,15 +73,14 @@ class App
     {
         $nombre = $_SESSION["usuario"];
         $listadeseos = $_SESSION[$nombre];
-        
-            $posicion = $_POST["ideliminar"];
-            $listadeseos = json_decode($listadeseos);
-            unset($listadeseos[$posicion]);
-            //El espacio sobrante lo ordena
-            $listadeseos = array_values($listadeseos);
-            $listadeseos = json_encode($listadeseos);
-            $_SESSION[$nombre] = $listadeseos;
-            header("Location: Home.php");
-        
+
+        $posicion = $_POST["ideliminar"];
+        $listadeseos = json_decode($listadeseos);
+        unset($listadeseos[$posicion]);
+        //El espacio sobrante lo ordena
+        $listadeseos = array_values($listadeseos);
+        $listadeseos = json_encode($listadeseos);
+        $_SESSION[$nombre] = $listadeseos;
+        header("Location: Home.php");
     }
 }
