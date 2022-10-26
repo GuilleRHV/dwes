@@ -29,7 +29,8 @@ if (isset($_POST["envio"])) {
 <body>
     <h1>Login sesiones</h1>
     <h2>App</h2>
-    <form name="miformu" method="POST">
+    <!--Usamos htmlspecialchars por cuestiones de seguridad -->
+    <form name="miformu" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
 
         <label for="nombre">Inicia sesion</label>
         <p>Usuario</p>

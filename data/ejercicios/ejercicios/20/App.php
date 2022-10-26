@@ -50,7 +50,7 @@ class App
             //Borra cookie
             
     
-
+            
             header("Location: Home.php");
         
         }
@@ -64,7 +64,7 @@ class App
         //elimina informacion
         session_destroy();
         //Borra cookie
-        setcookie(session_name(),"", time() - 1);
+        setcookie(session_name(),"", time() - 1,"/");
         header("Location: index.php");
     }
 
@@ -74,7 +74,7 @@ class App
     {
         $nombre = $_SESSION["usuario"];
         $listadeseos = $_SESSION[$nombre];
-        if (isset($_POST["eliminarid"])) {
+        
             $posicion = $_POST["ideliminar"];
             $listadeseos = json_decode($listadeseos);
             unset($listadeseos[$posicion]);
@@ -83,6 +83,6 @@ class App
             $listadeseos = json_encode($listadeseos);
             $_SESSION[$nombre] = $listadeseos;
             header("Location: Home.php");
-        }
+        
     }
 }

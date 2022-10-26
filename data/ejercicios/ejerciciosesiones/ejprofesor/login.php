@@ -19,6 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         if($credentials == false){
             $error = 1;
         }else{
+            //si son validas
             session_start();
             $_SESSION["loginok"]=$credentials;
             header("Location: principal.php");
@@ -37,7 +38,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <title>Document</title>
 </head>
 <body>
-<form name="miformu" method="POST" action="">
+    <h2>Pagina de acceso</h2>
+    <?php
+    if(isset($error) && $error=1){
+        echo "<p> <font color='red'>Usuario/contraseña invalida</font></p>";
+    }
+    ?>
+<form name="miformu" method="POST" action="login.php">
 
 <label for="nombre">Inicia sesion</label>
 <p>Usuario</p>
