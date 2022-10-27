@@ -4,12 +4,7 @@ class App
 {
 
 
-    function run()
-    {
-        //Si da problemas poner este y quitar el del login
-        //require_once "formulario.php";
-
-    }
+  
     /**
      * login
      * @return method auth
@@ -44,7 +39,34 @@ class App
      */
     function new()
     {
-        header("Location: New.php");
+        if (isset($_POST["crearlista"])) {
+            //$listadeseos=$_POST["deseo"];
+            $nombre = $_SESSION["usuario"];
+            //$listadeseos=[$_COOKIE["nombre"]=>$_POST["deseo"]];
+        
+            if (isset($_SESSION[$nombre])) {
+                $listadeseos = $_SESSION[$nombre];
+        
+                $listadeseos = json_decode($listadeseos);
+                //json_decode($listadeseos);
+                
+                
+        
+                $listadeseos[] = $_POST["deseo"];
+            } else {
+        
+        
+                $listadeseos = array($_POST["deseo"]);
+                // $_SESSION[$nombre][]=$_POST["deseo"];
+        
+        
+        
+            }
+            $listadeseos = json_encode($listadeseos);
+            $_SESSION[$nombre] = $listadeseos;
+        
+            
+        }
     }
     /**
      * empty    vacia lista de deseos

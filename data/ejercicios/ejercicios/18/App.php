@@ -43,6 +43,6 @@ class App
         //Ver que recibe los datos
         //echo "el nombre es " . $nombre;
         //header("Location: pagina.php");
-        header("Location: Home.php");
+        //header("Location: Home.php");
     }
 }

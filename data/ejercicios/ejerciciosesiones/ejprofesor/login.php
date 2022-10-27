@@ -2,14 +2,14 @@
 function comprobarcredenciales($nombreusu, $clave)
 {
     if ($nombreusu == "usuario" && $clave == "1234") {
-        $credenciales["claveusu"] = "usuario";
+        $credenciales["nombreusu"] = "usuario";
         $credenciales["rol"] = 0;
         return $credenciales;
     }
     if ($nombreusu == "admin" && $clave == "4567") {
-        $credenciales["claveusu"] = "admin";
+        $credenciales["nombreusu"] = "admin";
         $credenciales["rol"] = 1;
-        $credenciales;
+        return $credenciales;
     }
     return false;
 }

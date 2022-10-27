@@ -40,10 +40,7 @@ class App
      * new  Redirige a pagina para crear deseos
      * @return location new.php
      */
-    function new()
-    {
-        header("Location: New.php");
-    }
+   
     /**
      * empty    vacia lista de deseos
      * @return location home.php
@@ -112,6 +109,30 @@ class App
 
             setcookie($nombre, $listadeseos, time() + 600);
 
+            header("Location: Home.php");
+        }
+    }
+
+    function new(){
+        if (isset($_POST["crearlista"])) {
+            //$listadeseos=$_POST["deseo"];
+            $nombre = $_COOKIE["usuario"];
+            //$listadeseos=[$_COOKIE["nombre"]=>$_POST["deseo"]];
+            $listadeseos = $_COOKIE[$nombre];
+            if ($listadeseos == null) {
+                $listadeseos = array($_POST["deseo"]);
+                $listadeseos = json_encode($listadeseos);
+            } else {
+                $listadeseos = $_COOKIE[$nombre];
+                $listadeseos = json_decode($listadeseos);
+        
+        
+                $listadeseos[] = $_POST["deseo"];
+        
+                $listadeseos = json_encode($listadeseos);
+            }
+        
+            setcookie($nombre, $listadeseos, time() + 400);
             header("Location: Home.php");
         }
     }

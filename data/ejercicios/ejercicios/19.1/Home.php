@@ -2,30 +2,47 @@
 
 require_once "App.php";
 
-session_start();
-//Crearemos la lista de deseos
+
+if (isset($_POST["crearlista"])) {
+    //$listadeseos=$_POST["deseo"];
+    $nombre = $_COOKIE["usuario"];
+    //$listadeseos=[$_COOKIE["nombre"]=>$_POST["deseo"]];
+    $listadeseos = $_COOKIE[$nombre];
+    if ($listadeseos == null) {
+        $listadeseos = array($_POST["deseo"]);
+        $listadeseos = json_encode($listadeseos);
+    } else {
+        $listadeseos = $_COOKIE[$nombre];
+        $listadeseos = json_decode($listadeseos);
+        //json_decode($listadeseos);
 
 
-//Llama a la funcion empty
+        $listadeseos[] = $_POST["deseo"];
+
+        $listadeseos = json_encode($listadeseos);
+    }
+
+    setcookie($nombre, $listadeseos, time() + 400);
+    $app = new App;
+    $app->new();
+}
+
+
+//Llama al metodo empty
 if (isset($_POST["eliminartodo"])) {
     $app = new App;
     $app->empty();
 }
 
-//Llama a la dunciont close 
+//Llama al metodo close
 if (isset($_POST["cerrarsesion"])) {
     $app = new App;
     $app->close();
 }
-//Llama a la funcion delete
+//Llama al metodo delete
 if (isset($_POST["eliminarid"])) {
     $app = new App;
     $app->delete();
-}
-
-if(isset($_POST["crearlista"])){
-    $app = new App;
-    $app->new();
 }
 
 // 
@@ -45,10 +62,8 @@ if(isset($_POST["crearlista"])){
 <body>
     <p>
         <?php
-        $nombre = $_SESSION["usuario"];
-        $lista = null;
-
-        echo "Bienvenido usuario " . $_SESSION["usuario"] . ", tus deseos son " . $_SESSION[$nombre];
+        $nombre = $_COOKIE["usuario"];
+        echo "Bienvenido usuario " . $_COOKIE["usuario"] . ", tus deseos son " . $_COOKIE[$nombre];
 
         ?>
     </p>

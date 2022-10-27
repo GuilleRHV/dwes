@@ -3,28 +3,12 @@
 require_once "App.php";
 
 
-if (isset($_POST["crearlista"])) {
-    //$listadeseos=$_POST["deseo"];
-    $nombre = $_COOKIE["usuario"];
-    //$listadeseos=[$_COOKIE["nombre"]=>$_POST["deseo"]];
-    $listadeseos = $_COOKIE[$nombre];
-    if ($listadeseos == null) {
-        $listadeseos = array($_POST["deseo"]);
-        $listadeseos = json_encode($listadeseos);
-    } else {
-        $listadeseos = $_COOKIE[$nombre];
-        $listadeseos = json_decode($listadeseos);
-        //json_decode($listadeseos);
 
 
-        $listadeseos[] = $_POST["deseo"];
-
-        $listadeseos = json_encode($listadeseos);
-    }
-
-    setcookie($nombre, $listadeseos, time() + 400);
+if(isset($_POST["crearlista"])){
     $app = new App;
-    $app->new();
+    $app ->new();
+
 }
 
 
