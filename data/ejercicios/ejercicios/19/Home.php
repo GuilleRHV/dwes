@@ -28,17 +28,18 @@ if (isset($_POST["crearlista"])) {
 }
 
 
-
+//Llama al metodo empty
 if (isset($_POST["eliminartodo"])) {
-    $app =new App;
+    $app = new App;
     $app->empty();
 }
 
-
+//Llama al metodo close
 if (isset($_POST["cerrarsesion"])) {
-    $app =new App;
+    $app = new App;
     $app->close();
 }
+//Llama al metodo delete
 if (isset($_POST["eliminarid"])) {
     $app = new App;
     $app->delete();

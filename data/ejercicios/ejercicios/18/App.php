@@ -3,22 +3,33 @@
 class App
 {
 
-
+    /**
+     * run  ejecuta la app
+     * 
+     */
     function run()
     {
         require_once "formulario.php";
     }
 
+    /**
+     * login   confirma datos
+     * @return method auth   
+     */
 
     function login()
     {
 
         //require_once "formulario.html";
         if (isset($_POST["envio"])) {
+            //si se envia el formulario se valida
             $this->auth();
         }
     }
-
+    /**
+     * auth   registra los datos
+     * @return location home.php
+     */
     function auth()
     {
         //Las cookies deben ser lo primero en hacer

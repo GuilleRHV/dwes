@@ -10,7 +10,10 @@ class App
         //require_once "formulario.php";
 
     }
-
+    /**
+     * login
+     * @return method auth
+     */
 
     function login()
     {
@@ -21,7 +24,10 @@ class App
             $this->auth();
         }
     }
-
+    /**
+     * auth     crea el usuario y la sesion
+     * @return location home.php
+     */
     function auth()
     {
         //Las cookies deben ser lo primero en hacer
@@ -32,12 +38,19 @@ class App
         header("Location: Home.php");
     }
 
-    //Crea nuevo deseo
+    /**
+     * new  Redirige a pagina para crear deseos
+     * @return location new.php
+     */
     function new()
     {
         header("Location: New.php");
     }
-    //Vacia lista de deseos
+    /**
+     * empty    vacia lista de deseos
+     * @return location home.php
+     * 
+     */
     function empty()
     {
         $nombre = $_SESSION["usuario"];
@@ -54,6 +67,10 @@ class App
             header("Location: Home.php");
         }
     }
+    /**
+     * close    elimina cookies y redirige a index
+     * @return location index.php
+     */
     //Destruye la sesion y la borra 
     function close()
     {
@@ -68,6 +85,10 @@ class App
     }
 
 
+    /**
+     * delete   elimina un objeto de la lista y modifica la sesion en consecuencia
+     * @return location home.php
+     */
     //Elimina una posicion del array lista de deseos
     function delete()
     {

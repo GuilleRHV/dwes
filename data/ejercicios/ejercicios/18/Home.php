@@ -1,7 +1,7 @@
 <?php
 
 
-
+//si pulsas el submit caducar elimina la cookie
 if (isset($_POST["caducar"])) {
     setcookie("datospersonales", $_COOKIE["datospersonales"], time() - 1);
     setcookie("nombre", $_COOKIE["nombre"], time() - 1);
