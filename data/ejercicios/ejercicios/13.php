@@ -32,7 +32,9 @@
     </form>
 
     <?php
-
+    /**
+     *@author Guillermo 
+     */
     $nombre = $_GET['nombrepersona'];
 
     if (isset($_GET["envio"])) {

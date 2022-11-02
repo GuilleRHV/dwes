@@ -13,6 +13,9 @@
     <p>Construye un array con el nombre de 4 países y muestralo por pantalla. </p>
     <h2>Paises</h2>
     <?php
+    /**
+     *@author Guillermo 
+     */
     $paises = array("España", "Alemania", "Italia", "Francia");
     print_r($paises);
     ?>

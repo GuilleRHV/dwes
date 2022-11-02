@@ -13,6 +13,9 @@
     <p>Imprimir la tabla de multiplicar del 8. Usar constante para que fácilmente podamos adaptarla a otros números. </p>
     <h2>Tabla del 8</h2>
     <?php
+    /**
+     *@author Guillermo 
+     */
     define('LONG', 10);
     // o const LONG = 10;
     echo "<table border=1>";

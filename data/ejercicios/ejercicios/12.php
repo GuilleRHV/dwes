@@ -25,6 +25,9 @@
     </form>
 
     <?php
+    /**
+     *@author Guillermo 
+     */
     //Si en form quisieramos pagina externa añadimos action="archivosphp/ejercicio2.php"
     $nombre = $_GET['nombrepersona'];
 

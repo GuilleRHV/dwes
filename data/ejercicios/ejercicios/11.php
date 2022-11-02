@@ -37,6 +37,9 @@
     </form>
 
     <?php
+    /**
+     *@author Guillermo 
+     */
     //Usamos $_GET[] para obtener el valor del "name" del input
     $autor = $_GET['nombreautor'];
     $editorial = $_GET['nombreeditorial'];

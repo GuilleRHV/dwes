@@ -13,6 +13,9 @@
     <p>Dado un número por constante, por ejemplo el 169 o 193, mostrar la lista de todos sus divisores. Si no los hay decir que el número es primo. </p>
     <h2>Numeros primos</h2>
     <?php
+    /**
+     *@author Guillermo 
+     */
     define('CONSTANTE', 194);
     // o const LONG = 10;
     echo "Divisores del numero " . CONSTANTE;

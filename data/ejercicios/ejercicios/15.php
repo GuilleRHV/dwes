@@ -33,6 +33,9 @@
     </form>
 
     <?php
+    /**
+     *@author Guillermo 
+     */
     //Para introducir el valor de un input en un array añadimos al final del name "[]";
 
     if (isset($_GET["envio"])) {

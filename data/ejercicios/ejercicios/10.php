@@ -15,6 +15,9 @@
         pivot. Muestra el resultado con un "foreach (clave => valor)" </p>
     <h2>Equipo basket (array asociativo y foreach clave/valor)</h2>
     <?php
+    /**
+     *@author Guillermo 
+     */
     //Para las posiciones: base, escolta, alero, alapivot,pivot
     //"Jorge","Jose","Antonio","David","Sergio"
     $equipo = array("base" => "Jorge", "escolta" => "Jose", "alero" => "Antonio", "alapivot" => "David", "pivot" => "Sergio");

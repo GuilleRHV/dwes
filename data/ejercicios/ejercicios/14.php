@@ -11,9 +11,9 @@
 <body>
     <h1>Ejercicio 14</h1>
     <p> Envío del script al mismo script. Crea un formulario que funcione como calculadora. Debe contener dos input como operandos y un select para elegir operador.
-    <br>>Si se reciben los datos muestra el resultado.
-    <br>>Si no son válidos o no existen debe mostrar de nuevo el formulario de calculadora.
-</p>
+        <br>>Si se reciben los datos muestra el resultado.
+        <br>>Si no son válidos o no existen debe mostrar de nuevo el formulario de calculadora.
+    </p>
     <h2>Calculadora</h2>
     <form name="miformu" method="GET">
         <p>
@@ -33,7 +33,9 @@
     </form>
 
     <?php
-
+    /**
+     *@author Guillermo 
+     */
     $nombre = $_GET['nombrepersona'];
     $op1 = $_GET['op1'];
     $op2 = $_GET['op2'];

@@ -23,6 +23,9 @@
         <input type="submit" name="envio" id="envio" value="Añadir">
         <ul>
             <?php
+            /**
+             *@author Guillermo 
+             */
             //Si en form quisieramos pagina externa añadimos action="archivosphp/ejercicio2.php"
 
             //Vamos añadiendo los nombres uno a uno y a la vez se recorre el array nombrepersonas (y a la vez mostrandose por pantalla)

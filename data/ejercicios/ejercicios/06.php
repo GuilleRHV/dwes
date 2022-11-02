@@ -15,6 +15,9 @@
     <br>b) Indicando la posición del nombre en el array (0, 1, 2, ...). </p>
     <h2>Equipo basket</h2>
     <?php
+    /**
+     *@author Guillermo 
+     */
     //Se puede hacer array de varias formas:
     /*$arraya=array("valor1","valor2");
           $arrayb=["valor1","valor2"];
