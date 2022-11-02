@@ -14,7 +14,6 @@ if (isset($_POST["crearlista"])) {
     } else {
         $listadeseos = $_COOKIE[$nombre];
         $listadeseos = json_decode($listadeseos);
-        //json_decode($listadeseos);
 
 
         $listadeseos[] = $_POST["deseo"];
