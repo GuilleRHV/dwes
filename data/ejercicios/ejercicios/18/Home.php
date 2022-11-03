@@ -46,6 +46,7 @@ if (isset($_POST["eliminarid"])) {
 <body>
     <p>
         <?php
+        //Da la bienvenida al usuario gracias a las cookies
         $nombre = $_COOKIE["usuario"];
         echo "Bienvenido usuario " . $_COOKIE["usuario"] . ", tus deseos son " . $_COOKIE[$nombre];
 
@@ -69,6 +70,7 @@ if (isset($_POST["eliminarid"])) {
         <input type="submit" name="cerrarsesion" value="Cerrar sesion">
         <?php
         if (isset($_POST["quitar"])) {
+            //Se abrira un formulario para eliminar segun la posicion
             echo "<h4>Introduce posicion que desea eliminar</h4>";
             echo '<p><input type="text" name="ideliminar"></p>';
             echo '<input type="submit" name="eliminarid" value="Eliminar por ID">';

@@ -1,6 +1,6 @@
 <?php
 
-
+//Muestra potencias base 2
 echo "<h2>Potencias de 2 hasta 2^24</h2>";
 echo "<table border=1>";
 

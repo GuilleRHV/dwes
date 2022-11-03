@@ -1,5 +1,5 @@
 <?php
-
+//Muestra secuencia fibonacci
 echo "<h2>Secuencia Fibonacci hasta 1.000.000</h2>";
 echo "<table border=1>";
 $num = 0;

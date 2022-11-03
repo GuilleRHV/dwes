@@ -36,5 +36,5 @@ class Factorial
                 break;
             }
         }
-    }
+    }//Cierre de la funcion
 }

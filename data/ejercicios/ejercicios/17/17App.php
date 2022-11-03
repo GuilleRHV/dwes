@@ -3,7 +3,7 @@
 class App
 {
     /**
-     * index
+     * index    Pagina index
      * @return function variasfunciones
      */
     public function index()
@@ -14,20 +14,30 @@ class App
         //Introducimos numero hasta del que queremos saber los factoriales anteriores
         $this->factorial();
         $this->listaprimos();
-    }
+    }//Cierre de la funcion
 
+    /**
+     * fibonacci    Muestra secuencia fibonacci
+     *@return method fibonacci 
+     *
+     */
     public function fibonacci()
     {
         //Require_once para acceder a un archivo externo una vez
         require_once("17fibonacci.php");
-    }
+    }//Cierre de la funcion
 
+    /**
+     * potencias2 Muestra las potencias de base 2
+     * @return method potencias2
+     */
     public function potencias2()
     {
         require_once("17potencias2.php");
-    }
+    }//Cierre de la funcion
+
     /**
-     * factorial
+     * factorial    Muestra los factoriales hasta x numero (Dentro de la clase Factorial)
      * @return method calcularfactorial
      */
     public function factorial()
@@ -36,7 +46,7 @@ class App
         require_once("17factorial.php");
         $facto = new Factorial();
         $facto->calcularfactorial();
-    }
+    }//Cierre de la funcion
     /**
      * esPrimo
      * @param $num numero
@@ -54,7 +64,8 @@ class App
             }
         }
         return true;
-    }
+    }//Cierre de la funcion
+    
     /**
      * listaprimos
      * @return string primos
@@ -71,5 +82,6 @@ class App
             }
         }
         echo "</tr></table>";
-    }
-}
+    }//Cierre de la funcion
+
+}//Cierre de la clase

@@ -18,7 +18,9 @@ class App
 
             $this->auth();
         }
-    }
+    }//Cierre de la funcion
+
+
     /**
      * auth     crea el usuario y la sesion
      * @return location home.php
@@ -31,11 +33,12 @@ class App
         session_start();
         $_SESSION["usuario"] = $nombre;
         header("Location: Home.php");
-    }
+    }//Cierre de la funcion
+
 
     /**
-     * new  Redirige a pagina para crear deseos
-     * @return location new.php
+     * new  Crea deseos
+     * @return location home.php
      */
     function new()
     {
@@ -67,7 +70,8 @@ class App
         
             
         }
-    }
+    }//Cierre de la funcion
+
     /**
      * empty    vacia lista de deseos
      * @return location home.php
@@ -88,7 +92,9 @@ class App
 
             header("Location: Home.php");
         }
-    }
+    }//Cierre de la funcion
+
+
     /**
      * close    elimina cookies y redirige a index
      * @return location index.php
@@ -104,7 +110,7 @@ class App
         //Borra cookie
         setcookie(session_name(), "", time() - 1, "/");
         header("Location: index.php");
-    }
+    }//Cierre de la funcion
 
 
     /**
@@ -125,5 +131,5 @@ class App
         $listadeseos = json_encode($listadeseos);
         $_SESSION[$nombre] = $listadeseos;
         header("Location: Home.php");
-    }
+    }//Cierre de la funcion
 }

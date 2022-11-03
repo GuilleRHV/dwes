@@ -4,15 +4,10 @@ class App
 {
 
 
-    function run()
-    {
-        //Si da problemas poner este y quitar el del login
-        //require_once "formulario.php";
-
-    }
+    
 
     /**
-     * login
+     * login    Redirige al formulario
      * @return method auth
      */
     function login()
@@ -23,7 +18,8 @@ class App
 
             $this->auth();
         }
-    }
+    }//Cierre de la funcion
+
     /**
      * auth     crea el usuario y las coockies
      * @return location home.php
@@ -35,11 +31,7 @@ class App
         $nombre = $_POST["usuario"];
         setcookie("usuario", $nombre, time() + 200);
         header("Location: Home.php");
-    }
-    /**
-     * new  Redirige a pagina para crear deseos
-     * @return location new.php
-     */
+    }//Cierre de la funcion
    
     /**
      * empty    vacia lista de deseos
@@ -67,7 +59,8 @@ class App
         }
 
         header("Location: Home.php");
-    }
+    }//Cierre de la funcion
+
     /**
      * close    elimina cookies y redirige a index
      * @return location index.php
@@ -89,7 +82,7 @@ class App
             setcookie($nombre, "", time() - 400);
             header("Location: index.php");
         }
-    }
+    }//Cierre de la funcion
 
     /**
      * delete   elimina un objeto de la lista y modifica la cookie en consecuencia
@@ -111,8 +104,13 @@ class App
 
             header("Location: Home.php");
         }
-    }
+    }//Cierre de la funcion
 
+     /**
+     * new   crea deseos
+     * @return location home.php
+     */
+   
     function new(){
         if (isset($_POST["crearlista"])) {
             //$listadeseos=$_POST["deseo"];
@@ -135,5 +133,5 @@ class App
             setcookie($nombre, $listadeseos, time() + 400);
             header("Location: Home.php");
         }
-    }
-}
+    }//Cierre de la funcion
+}//Cierre de la clase
