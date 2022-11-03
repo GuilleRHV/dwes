@@ -1,28 +1,20 @@
-<?php
-require_once "App.php";
-$app = new App;
-$app->login();
-?>
 
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 18</title>
-
+    <title>Document</title>
 </head>
 
 <body>
-
-
-
-
-
-
+   
+    <h2>Colores</h2>
+    <a href="?method=cambiocolorrojo">Rojo</a>
+    <a href="?method=cambiocolorazul">Azul</a>
+    <a href="?method=cambiocoloramarillo">Amarillo</a>
 </body>
 
 </html>

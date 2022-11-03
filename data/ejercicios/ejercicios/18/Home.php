@@ -1,13 +1,36 @@
 <?php
 
+require_once "App.php";
 
-//si pulsas el submit caducar elimina la cookie
-if (isset($_POST["caducar"])) {
-    setcookie("datospersonales", $_COOKIE["datospersonales"], time() - 1);
-    setcookie("nombre", $_COOKIE["nombre"], time() - 1);
-    require_once "App.php";
-    header("Location: index.php");
+
+
+
+if(isset($_POST["crearlista"])){
+    $app = new App;
+    $app ->new();
+
 }
+
+
+//Llama al metodo empty
+if (isset($_POST["eliminartodo"])) {
+    $app = new App;
+    $app->empty();
+}
+
+//Llama al metodo close
+if (isset($_POST["cerrarsesion"])) {
+    $app = new App;
+    $app->close();
+}
+//Llama al metodo delete
+if (isset($_POST["eliminarid"])) {
+    $app = new App;
+    $app->delete();
+}
+
+// 
+
 ?>
 
 
@@ -21,9 +44,36 @@ if (isset($_POST["caducar"])) {
 </head>
 
 <body>
+    <p>
+        <?php
+        $nombre = $_COOKIE["usuario"];
+        echo "Bienvenido usuario " . $_COOKIE["usuario"] . ", tus deseos son " . $_COOKIE[$nombre];
+
+        ?>
+    </p>
     <form name="miformu" method="POST">
-        <h2>Hola <?php echo $_COOKIE["nombre"] ?></h2>
-        <input type="submit" name="caducar" value="caducar Cookie">
+
+
+        <p>
+            <label for="ssa">Añade deseos</label>
+
+            <input type="text" name="deseo">
+
+        </p>
+
+
+        </p>
+        <input type="submit" name="crearlista" value="Nuevo deseo">
+        <input type="submit" name="quitar" value="Quitar deseo">
+        <input type="submit" name="eliminartodo" value="Eliminar todos los deseos">
+        <input type="submit" name="cerrarsesion" value="Cerrar sesion">
+        <?php
+        if (isset($_POST["quitar"])) {
+            echo "<h4>Introduce posicion que desea eliminar</h4>";
+            echo '<p><input type="text" name="ideliminar"></p>';
+            echo '<input type="submit" name="eliminarid" value="Eliminar por ID">';
+        }
+        ?>
     </form>
 </body>
 
