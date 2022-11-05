@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +9,10 @@
 </head>
 
 <body>
-    <?php
-    if (isset($_COOKIE["color"])) {
-        $color = $_COOKIE["color"];
+<?php
+    session_start();
+    if (isset($$_SESSION["color"])) {
+        $color = $_SESSION["color"];
         if ($color == "red") {
             echo "<style type'text/css'>
         body{

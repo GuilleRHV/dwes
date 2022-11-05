@@ -132,4 +132,4 @@ class App
         $_SESSION[$nombre] = $listadeseos;
         header("Location: Home.php");
     }//Cierre de la funcion
-}
+}//Cierre de la clase

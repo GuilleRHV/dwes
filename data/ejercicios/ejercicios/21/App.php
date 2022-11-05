@@ -26,8 +26,14 @@ class App
     function index()
     {
         
+    session_start();
+    
+
+    
         require_once "views/Home.php";
-        
+    
+
+    
     }//Cierre de la funcion
 
     /**
@@ -46,13 +52,12 @@ class App
         he hecho una funcion por cada color
     */
     /**
-     * cambiocolorrojo  cambia el fondo a color rojo y establece la cookie
+     * cambiocolorrojo  cambia el fondo a color rojo y establece la sesion
      */
     function cambiocolorrojo()
     {
-        //$_SESSION["color"]="red";
-        setcookie("color", "red", time() + 300);
-
+        
+        $_SESSION["color"]="red";
     
         include "views/Home.php";
         echo "<style type'text/css'>
@@ -62,12 +67,12 @@ class App
     }//Cierre de la funcion
 
     /**
-     * cambiocolorazul  cambia el fondo a color azul y establece la cookie
+     * cambiocolorazul  cambia el fondo a color azul y establece la sesion
      */
     function cambiocolorazul()
     {
         
-        setcookie("color", "cyan", time() + 300);
+        $_SESSION["color"]="cyan";
         include "views/Home.php";
 
         echo "<style type'text/css'>
@@ -77,12 +82,12 @@ class App
     }//Cierre de la funcion
 
     /**
-     * cambiocoloramarillo  cambia el fondo a color amarillo y establece la cookie
+     * cambiocoloramarillo  cambia el fondo a color amarillo y establece la sesion
      */
     function cambiocoloramarillo()
     {
 
-        setcookie("color", "yellow", time() + 300);
+        $_SESSION["color"]="yellow";
         include "views/Home.php";
         echo "<style type'text/css'>
                 body{
@@ -91,29 +96,29 @@ class App
     }//Cierre de la funcion
 
     /**
-     * vistacolores     Si existe la cookie color pinta el fonde de ese color
+     * vistacolores     Si existe la sesion color pinta el fonde de ese color
      */
     function vistacolores()
     {
-        // header("Location: views/Colores.php");
-        require_once "views/Colores.php";
-        if (isset($_COOKIE["color"])) {
-            if ($_COOKIE["color"] == "red") {
+        if (isset($_SESSION["color"])) {
+            if ($_SESSION["color"] == "red") {
                 echo "<style type'text/css'>
                 body{
                     background-color:red;
                  } </style>";
-            } elseif ($_COOKIE["color"] == "cyan") {
+            } elseif ($_SESSION["color"] == "cyan") {
                 echo "<style type'text/css'>
                 body{
                     background-color:cyan;
                  } </style>";
-            } elseif ($_COOKIE["color"] == "yellow") {
+            } elseif ($_SESSION["color"] == "yellow") {
                 echo "<style type'text/css'>
                 body{
                     background-color:yellow;
                  } </style>";
             }
         }
+        require_once "views/Colores.php";
+        
     }//Cierre de la funcion
 }//Cierre de la clase
